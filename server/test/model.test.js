@@ -38,3 +38,18 @@ test("model rejects fields not declared in its definition", () => {
     });
     db.close();
 });
+
+test("model deletes all rows and returns the number deleted", () => {
+    const db = new Database(":memory:");
+    db.exec("CREATE TABLE entries (id INTEGER PRIMARY KEY, name TEXT NOT NULL)");
+    const Entry = createModel(db, { table: "entries", fields: ["name"] });
+
+    Entry.create({ name: "Team 1" });
+    Entry.create({ name: "Team 2" });
+
+    assert.equal(Entry.deleteAll(), 2);
+    assert.deepEqual(Entry.findAll(), []);
+    assert.equal(Entry.deleteAll(), 0);
+
+    db.close();
+});

@@ -81,6 +81,10 @@ function createModel(db, { table, fields }) {
                 `DELETE FROM ${tableName} WHERE "id" = ?`
             ).run(id).changes > 0;
         },
+
+        deleteAll() {
+            return db.prepare(`DELETE FROM ${tableName}`).run().changes;
+        },
     };
 }
 

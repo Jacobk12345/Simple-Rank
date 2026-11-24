@@ -1,0 +1,14 @@
+.setup {
+     flex: 1;
+     min-width: 240px;
+     align-items: 'center';
+}
+
+.setup p {
+     width: 30%;
+}
+
+.setup input {
+     width: 70%;
+     height: 25px;
+}

@@ -1,6 +1,11 @@
 import { StrictMode, useState } from 'react'
 import { createRoot } from 'react-dom/client'
-// import './index.css'
+
+// CSS Stylings
+import './css/button.css'
+import './css/table.css'
+
+// Views
 import Home from './home.jsx'
 import Admin from './admin.jsx'
 import Error from './error.jsx'

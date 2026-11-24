@@ -1,4 +1,3 @@
-// import './App.css'
 import './css/table.css'
 
 function Error() {

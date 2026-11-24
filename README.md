@@ -1,1 +1,0 @@
-To run in a dev environment, use the command: npx concurrently "npm run dev --prefix client" "node server/index.js"
